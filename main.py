@@ -9,7 +9,7 @@ from time import sleep
 
 url = requests.get('https://api.hgbrasil.com/finance?array_limit=1&key=1dbfaeb4')
 jso = url.json()
-dolar0 = (jso['results']['currencies']['USD']['sell'])
+dolar0 = (jso['results']['currencies']['USD']['buy'])
 dolar1 = f'{dolar0:.2f}'
 dolar2 = float(dolar1)
 dolarformated = f'R${dolar2:.2f}'.replace('.',',')
@@ -47,7 +47,6 @@ if __name__ == "__main__":
     while True:
         try:
             post_twitter()
-            sleep(3600)
-        
+            sleep(1800)
         except Exception as e:
             print(e)
