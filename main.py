@@ -31,7 +31,7 @@ def post_twitter():
         with open('Txts\dolar.txt', 'w') as file:
             file.write(dolar1)
             file.close
-        api.update_status(status=f'{speak}.. o dolar subiu para {dolarformated} {emote}', media_ids='atual.png')
+        api.update_with_media('atual.png', status=f'{speak}.. o dolar subiu para {dolarformated} {emote}')
     
     elif value() > dolar2:
         valor = value()
@@ -47,6 +47,6 @@ if __name__ == "__main__":
     while True:
         try:
             post_twitter()
-            sleep(1800)
+            sleep(3600)
         except Exception as e:
             print(e)
