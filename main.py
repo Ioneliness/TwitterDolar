@@ -42,6 +42,8 @@ def post_twitter():
             file.write(dolar1)
             file.close
         api.update_with_media('atual.png', status=f'{speak}.. o dolar desceu para {dolarformated} {emote}')
+    else:
+        pass
 
 if __name__ == "__main__":
     try:
