@@ -46,4 +46,4 @@ def post_twitter():
 if __name__ == "__main__":
     while True:
         post_twitter()
-        sleep(1800)
+        sleep(30)
