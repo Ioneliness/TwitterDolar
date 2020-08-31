@@ -45,8 +45,5 @@ def post_twitter():
 
 if __name__ == "__main__":
     while True:
-        try:
-            post_twitter()
-            sleep(3600)
-        except Exception as e:
-            print(e)
+        post_twitter()
+        sleep(1800)
