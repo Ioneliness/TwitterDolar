@@ -44,6 +44,9 @@ def post_twitter():
         api.update_with_media('atual.png', status=f'{speak}.. o dolar desceu para {dolarformated} {emote}')
 
 if __name__ == "__main__":
-    while True:
-        post_twitter()
-        sleep(30)
+    try:
+        while True:
+            post_twitter()
+            sleep(30)
+    except Exception as e:
+        print(e)
