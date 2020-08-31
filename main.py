@@ -52,7 +52,7 @@ if __name__ == "__main__":
     try:
         while True:
             post_twitter()
-            sleep(30)
+            sleep(1800)
     except Exception as e:
         print(e)
         
