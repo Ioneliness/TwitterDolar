@@ -23,7 +23,12 @@ def value():
         return float(file.read().splitlines()[0])
 
 def post_twitter():
-    if value() < dolar2:
+    if value() == dolar2:
+        with open('Txts\dolar.txt', 'w') as file:
+            file.write(dolar1)
+            file.close
+
+    elif value() < dolar2:
         valor = value()
         speak = choice(list_speak)
         emote = choice(list_emotes_sad)
@@ -31,7 +36,7 @@ def post_twitter():
         with open('Txts\dolar.txt', 'w') as file:
             file.write(dolar1)
             file.close
-        api.update_with_media('atual.png', status=f'{speak}.. o dolar subiu para {dolarformated} {emote}')
+        api.update_with_media('atual.png', status=f'{speak}.. o dolar subiu para: {dolarformated} {emote}')
     
     elif value() > dolar2:
         valor = value()
@@ -41,9 +46,7 @@ def post_twitter():
         with open('Txts\dolar.txt', 'w') as file:
             file.write(dolar1)
             file.close
-        api.update_with_media('atual.png', status=f'{speak}.. o dolar desceu para {dolarformated} {emote}')
-    else:
-        pass
+        api.update_with_media('atual.png', status=f'{speak}.. o dolar desceu para: {dolarformated} {emote}')
 
 if __name__ == "__main__":
     try:
