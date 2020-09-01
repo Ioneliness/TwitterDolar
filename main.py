@@ -24,7 +24,7 @@ def value():
 
 def post_twitter():
     if value() == dolar2:
-        pass
+        continue
 
     elif value() < dolar2:
         valor = value()
