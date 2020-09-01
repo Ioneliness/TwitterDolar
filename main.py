@@ -24,9 +24,7 @@ def value():
 
 def post_twitter():
     if value() == dolar2:
-        with open('Txts\dolar.txt', 'w') as file:
-            file.write(dolar1)
-            file.close
+        pass
 
     elif value() < dolar2:
         valor = value()
@@ -55,4 +53,4 @@ if __name__ == "__main__":
             sleep(1800)
     except Exception as e:
         print(e)
-        
+
