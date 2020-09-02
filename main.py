@@ -50,6 +50,6 @@ if __name__ == "__main__":
     try:
         while True:
             post_twitter()
-            sleep(10)
+            sleep(1000)
     except Exception as e:
         print(e)
