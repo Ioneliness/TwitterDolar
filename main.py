@@ -19,19 +19,19 @@ list_emote_happy = ['≧ω≦','(⊙ᗜ⊙)','โ๏∀๏ใ','(≧∀≦)','۹
 list_speak = ['NyanNyan', 'Meow Meow', 'Nyan nyan nyan', 'Nyan', 'Yeaaah', 'YeahYeah', 'Yeah', 'Nhênhê', 'Whah']
 
 def value():
-    with open('Txts/dolar.txt', 'r') as file:
+    with open('dolar.txt', 'r') as file:
         return float(file.read().splitlines()[0])
 
 def post_twitter():
     if value() == dolar2:
-        continue
+        pass
 
     elif value() < dolar2:
         valor = value()
         speak = choice(list_speak)
         emote = choice(list_emotes_sad)
         create_image(dolarformated)
-        with open('Txts\dolar.txt', 'w') as file:
+        with open('dolar.txt', 'w') as file:
             file.write(dolar1)
             file.close
         api.update_with_media('atual.png', status=f'{speak}.. o dolar subiu para: {dolarformated} {emote}')
@@ -41,7 +41,7 @@ def post_twitter():
         speak = choice(list_speak)
         emote = choice(list_emote_happy)
         create_image(dolarformated)
-        with open('Txts\dolar.txt', 'w') as file:
+        with open('dolar.txt', 'w') as file:
             file.write(dolar1)
             file.close
         api.update_with_media('atual.png', status=f'{speak}.. o dolar desceu para: {dolarformated} {emote}')
@@ -50,7 +50,6 @@ if __name__ == "__main__":
     try:
         while True:
             post_twitter()
-            sleep(1800)
+            sleep(10)
     except Exception as e:
         print(e)
-
